@@ -112,6 +112,8 @@ Depois você pode extrair os campos e gerar tabelas como a seguinte:
 
 > O jogo deve executar em sistemas Linux apenas no modo console. Incluir comentários no código fonte e dependências necessárias para sua execução. 
 
+Um [programa de referência](main.c) foi fornecido, observe os arquivos que ele manipula para entender cada passo. Para testá-lo, basta digitar `make` no terminal. 
+
 ## Referências: 
 
 - [The RISC-V Instruction Set Manual Volume I: Unprivileged ISA](https://drive.google.com/file/d/1uviu1nH-tScFfgrovvFCrj7Omv8tFtkp/view), pg. 608
