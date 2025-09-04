@@ -6,21 +6,21 @@ int main(void) {
     int ret;
 
     // 1. Assembler: compila riscv.asm em objeto RV32I
-    ret = system("riscv64-unknown-elf-as -march=rv32i -mabi=ilp32 -o riscv.o riscv.asm");
+    ret = system("riscv64-linux-gnu-as -march=rv32i -mabi=ilp32 -o riscv.o riscv.asm");
     if (ret != 0) {
         fprintf(stderr, "Erro no assembler!\n");
         return 1;
     }
 
     // 2. Linker: gera executável bare-metal simples (ELF32)
-    ret = system("riscv64-unknown-elf-ld -m elf32lriscv -Ttext=0x0 -o riscv.elf riscv.o");
+    ret = system("riscv64-linux-gnu-ld -m elf32lriscv -Ttext=0x0 -o riscv.elf riscv.o");
     if (ret != 0) {
         fprintf(stderr, "Erro no linker!\n");
         return 1;
     }
 
     // 3. Dump: gera instruções em formato legível
-    ret = system("riscv64-unknown-elf-objdump -d riscv.elf > riscv.dump");
+    ret = system("riscv64-linux-gnu-objdump -d riscv.elf > riscv.dump");
     if (ret != 0) {
         fprintf(stderr, "Erro no objdump!\n");
         return 1;
